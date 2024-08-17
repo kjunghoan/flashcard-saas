@@ -1,7 +1,7 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-const systemPrompt = `
+const systemPrompt: string = `
 You are a flashcard generator. Your task is to create educational flashcards based on the provided text. Each flashcard should contain a question on the front and an answer on the back. Follow these guidelines:
 
 1. Identify key concepts, terms, and important information from the text.
@@ -44,7 +44,7 @@ Flashcards:
 }
 `;
 
-export const POST = async (req: Request) => {
+export const POST = async (req: NextRequest) => {
   const openai = new OpenAI();
   const data = await req.text();
   const completion = await openai.chat.completions.create({
@@ -62,10 +62,10 @@ export const POST = async (req: Request) => {
     parsedResponse = JSON.parse(completion.choices[0].message.content || '{"flashcards": []}');
   } catch (error: any) {
     console.log("error parsing openai response: ", error);
-    return NextResponse.json({ error: "Failed to generate flashcards" }, { status: 500 })
+    return NextResponse.json({ error: "Failed to generate flashcards" }, { status: 400 })
   };
-  if (!parsedResponse.flashcards || !Array.isArray(parsedResponse.flashcards)) {
-    return NextResponse.json({ error: "Invalid flashcard format received" }, { status: 500 })
+  if (!parsedResponse.flashcards || parsedResponse.flashcards.length === 0) {
+    return NextResponse.json({ error: "No flashcards generated" }, { status: 500 })
   }
   // Return the flashcards as a JSON response
   return NextResponse.json(parsedResponse);
