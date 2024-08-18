@@ -4,10 +4,10 @@ import { render, screen } from '@testing-library/react'
 
 describe('Home', () => {
 
-  it('Should have Docs text', () => {
+  it('Should be rendered', () => {
     render(<Home />);
-    const myElement = screen.getByText('Docs');
-    expect(myElement).toBeInTheDocument();
+    const home = screen.getByTestId('home');
+    expect(home).toBeInTheDocument();
   })
 
 });
