@@ -59,8 +59,10 @@ const PricingSection = () => {
               <Button
                 variant="contained"
                 color="primary"
-                sx={{ marginTop: 'auto' }}
-                onClick={() => {handleRedirect(price.endPoint)}}
+                sx={{
+                  marginTop: 'auto'
+                }}
+                onClick={() => { handleRedirect(price.endPoint) }}
               >
                 {price.title === "Enterprise" ? "Contact Support" : price.title}
               </Button>

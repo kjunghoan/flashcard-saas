@@ -1,6 +1,15 @@
+'use client';
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { AppBar, Button, Toolbar, Typography } from "@mui/material";
+import { useRouter } from "next/navigation";
 const NavBar: React.FC = () => {
+
+  const router = useRouter();
+
+  const handleNav = (name: string) => {
+    router.push(`/${name}`);
+  };
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -9,10 +18,17 @@ const NavBar: React.FC = () => {
           style={{
             flexGrow: 1
           }}
+        onClick={() => handleNav('')}
         >Flashcard SaaS</Typography>
         <SignedOut>
-          <Button color="inherit">Login</Button>
-          <Button color="inherit">Sign Up</Button>
+          <Button color="inherit"
+          name="login"
+            onClick={() => handleNav('sign-in')}
+          >Login</Button>
+          <Button color="inherit"
+          name="sign-up"
+            onClick={() => handleNav('sign-up')}
+          >Sign Up</Button>
         </SignedOut>
         <SignedIn>
           <UserButton />
