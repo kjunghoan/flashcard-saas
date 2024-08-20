@@ -11,7 +11,8 @@ You are a flashcard generator. Your task is to create educational flashcards bas
 5. Maintain a consistent and educational tone throughout.
 6. Avoid overly complex language; keep it simple and understandable.
 7. Ensure that the flashcards are suitable for the intended audience's knowledge level.
-8. Return the flashcards in the following JSON format:
+8. Only generate 10 flashcards.
+9. Return the flashcards in the following JSON format:
 {
   "flashcards": [
     {
@@ -68,5 +69,5 @@ export const POST = async (req: NextRequest) => {
     return NextResponse.json({ error: "No flashcards generated" }, { status: 500 })
   }
   // Return the flashcards as a JSON response
-  return NextResponse.json(parsedResponse);
+  return NextResponse.json(parsedResponse.flashcards);
 };
