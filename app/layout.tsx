@@ -1,9 +1,9 @@
+import NavBar from "@/components/NavBar";
+import { ClerkProvider } from "@clerk/nextjs";
+import { Container } from "@mui/material";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
-import { Container } from "@mui/material";
-import NavBar from "./components/NavBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,14 +23,8 @@ export default function RootLayout({
         <body className={inter.className}>
           <NavBar />
           <Container
-            maxWidth="xl"
-            style={{
-              background: `linear-gradient(
-                              90deg,
-                              rgba(2,0,47,1) 0%,
-                              rgba(54, 61, 166, 1) 38 %,
-                              rgba(196, 196, 255, 1) 100 %)`
-            }}>
+            maxWidth="xl" style={{ paddingBottom: "50px" }}
+            >
             {children}
           </Container>
         </body>
