@@ -4,7 +4,7 @@ const FlashcardComponent: React.FC<{
   flashcard: Flashcard;
   index: number;
   flipped: boolean;
-  handleCardFlip: (index: number) => void 
+  handleCardFlip: (index: number) => void
 }> = ({ flashcard, index, flipped, handleCardFlip }) => {
   return (
     <Grid item xs={12} sm={6} md={4} key={index}>
