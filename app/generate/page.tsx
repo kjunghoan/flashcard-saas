@@ -1,5 +1,6 @@
 'use client';
 import FlashcardComponent from "@/components/FlashcardComponent";
+import PleaseSignIn from "@/components/PleaseSignIn";
 import { saveFlashcards } from "@/utils/flashcardService";
 import { useUser } from "@clerk/nextjs";
 import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Grid, Paper, TextField, Typography } from "@mui/material";
@@ -43,22 +44,7 @@ const Generate: React.FC = () => {
   };
 
   return !isSignedIn ? (
-    <div
-      id="notLoggedIn"
-      data-testid="notLoggedIn"
-      style={{
-        textAlign: 'center',
-        marginTop: '10rem',
-      }}>
-      <h1>Generate</h1>
-      <Typography variant="h5">Please sign in to generate flashcards</Typography>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => router.push('/sign-in')}
-        sx={{ marginTop: '4rem' }}
-      >Sign In</Button>
-    </div>
+    <PleaseSignIn/>
   )
     :
     (
