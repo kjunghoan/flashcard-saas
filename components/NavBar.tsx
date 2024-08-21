@@ -31,6 +31,18 @@ const NavBar: React.FC = () => {
           >Sign Up</Button>
         </SignedOut>
         <SignedIn>
+          <Button
+          sx={{ mr: 2 }}
+            color="inherit"
+            name="flashcards"
+            onClick={() => handleNav('flashcards')}
+          >Your Flashcards</Button>
+          <Button
+          sx={{ mr: 2 }}
+            color="inherit"
+            name="generate"
+            onClick={() => handleNav('generate')}
+          >Generate New Flashcards</Button>
           <UserButton />
         </SignedIn>
       </Toolbar>
