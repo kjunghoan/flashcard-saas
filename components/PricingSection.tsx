@@ -74,6 +74,7 @@ const PricingSection = () => {
   };
 
   return (
+    <div id="pricing-section" data-testid="pricing-section">
     <Box sx={{ padding: 2, flexGrow: 1 }}>
       <Grid container spacing={2} sx={{ textAlign: 'center' }}>
         <Grid item xs={12}>
@@ -112,6 +113,7 @@ const PricingSection = () => {
         ))}
       </Grid>
     </Box>
+  </div>
   )
 };
 

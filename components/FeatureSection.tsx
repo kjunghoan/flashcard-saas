@@ -20,6 +20,7 @@ const FeatureSection = () => {
     }
   ];
   return (
+    <div id="feature-section" data-testid="feature-section">
     <Box sx={{ padding: 2, flexGrow: 2, textAlign: 'center' }}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
@@ -46,6 +47,7 @@ const FeatureSection = () => {
         ))}
       </Grid>
     </Box>
+  </div>
   );
 };
 export default FeatureSection;
