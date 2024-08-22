@@ -14,6 +14,10 @@ const FeatureSection = () => {
       title: "Study Flashcards From Anywhere",
       description: "Study your flashcards from anywhere on any device",
     },
+    {
+      title: "Easy To Use",
+      description: "Our app is easy to use and intuitive",
+    }
   ];
   return (
     <Box sx={{ padding: 2, flexGrow: 2, textAlign: 'center' }}>
