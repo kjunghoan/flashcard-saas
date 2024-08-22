@@ -11,6 +11,7 @@ const NavBar: React.FC = () => {
   };
 
   return (
+    <div id="nav-bar" data-testid="nav-bar">
     <AppBar position="static">
       <Toolbar>
         <Typography
@@ -47,6 +48,7 @@ const NavBar: React.FC = () => {
         </SignedIn>
       </Toolbar>
     </AppBar>
+  </div>
   );
 };
 
