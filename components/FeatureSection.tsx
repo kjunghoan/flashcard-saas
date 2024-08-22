@@ -27,7 +27,7 @@ const FeatureSection = () => {
           <Divider sx={{ marginBottom: 2 }} />
         </Grid>
         {features.map((feature, index) => (
-          <Grid item key={index} xs={12} sm={6} md={4} lg={3}>
+          <Grid item key={index} xs={12} sm={6} md={4} lg={3} data-testid="feature-item">
             <Box sx={{ display: 'inline-block' }}>
               <Typography
                 variant="h5"
