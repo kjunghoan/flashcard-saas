@@ -11,6 +11,7 @@
 - [License](LICENSE)
 
 ## Description
+![homepage.png](public/homepage.png)
 
 Flashcard SaaS is a web-based application designed to help users create, manage, and study flashcards. It aims to enhance learning efficiency by providing an easy-to-use platform for organizing study materials.
 
