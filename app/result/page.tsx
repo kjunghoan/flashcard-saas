@@ -69,7 +69,7 @@ const ResultPage: React.FC = () => {
           <Box sx={{ mt: 2 }}>
             <Typography variant="h6">Session ID: {session_id}</Typography>
             <Typography variant="body1">
-              We have received your payment. Proceed to the site as we email your receipt shortly.
+              We have received your payment. Proceed to the site, we email you your receipt shortly.
             </Typography>
           </Box>
         </div>

@@ -38,7 +38,7 @@ const PricingSection = () => {
         throw new Error("No origin found");
       };
       try {
-        const checkoutSession = await fetch("/api/checkout_sessions", {
+        const checkoutSession = await fetch("/api/checkout_session", {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
