@@ -8,7 +8,7 @@ import PricingSection from "../components/PricingSection";
 const Home: React.FC = () => {
   const router = useRouter();
   const handleNav = (signedIn: boolean) => {
-    signedIn ? router.push("/dashboard") : router.push("/sign-up");
+    signedIn ? router.push("/generate") : router.push("/sign-up");
   }
   return (
     <div id="home" data-testid="home" >
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
             sx={{
               mt: 2
             }}
-          onClick={() => handleNav(false)}
+          onClick={() => handleNav(true)}
           >Get Started</Button>
         </SignedIn>
         <SignedOut>
